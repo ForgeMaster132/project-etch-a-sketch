@@ -53,6 +53,10 @@ function gridCreator(){
         gridSize = prompt("Grid Size: ");    
         }
         gridSize = Math.round(gridSize);
+        if(gridSize > 250){
+            alert("250 by 250 is the largest grid size so it has been set to that");
+            gridSize = 250;
+        }
         globalGridSize = gridSize;
         let auto = "auto ";
         let final = auto.repeat(gridSize);
