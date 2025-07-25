@@ -1,14 +1,13 @@
-let auto = "auto ";
-let final = auto.repeat(16);
-document.getElementById("grid").style.gridTemplateColumns = final;
-for(let i = (16*16); i != 0; i --){
+let globalGridSize = 16;
+document.getElementById("grid").style.gridTemplateColumns = `repeat(${globalGridSize}, 1fr)`;
+document.getElementById("grid").style.gridTemplateRows = `repeat(${globalGridSize}, 1fr)`;
+for(let i = (globalGridSize*globalGridSize); i != 0; i --){
     let divs = document.createElement("div");
     divs.className = "gridBlock";
     divs.addEventListener("mouseover",toggle);
     document.getElementById("grid").appendChild(divs);
 }
 
-let globalGridSize = 16;
 
 // Buttons 
 
@@ -25,9 +24,8 @@ function eraser(){
     while(grid.hasChildNodes()){
         grid.removeChild(grid.firstChild);
     }
-    let auto = "auto ";
-    let final = auto.repeat(globalGridSize);
-    document.getElementById("grid").style.gridTemplateColumns = final;
+    document.getElementById("grid").style.gridTemplateColumns = `repeat(${globalGridSize}, 1fr)`;
+    document.getElementById("grid").style.gridTemplateRows = `repeat(${globalGridSize}, 1fr)`;
     for(let i = (globalGridSize*globalGridSize); i != 0; i --){
         let divs = document.createElement("div");
         divs.className = "gridBlock";
@@ -58,9 +56,8 @@ function gridCreator(){
             gridSize = 250;
         }
         globalGridSize = gridSize;
-        let auto = "auto ";
-        let final = auto.repeat(gridSize);
-        document.getElementById("grid").style.gridTemplateColumns = final;
+        document.getElementById("grid").style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+        document.getElementById("grid").style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
         for(let i = (gridSize*gridSize); i != 0; i --){
             let divs = document.createElement("div");
             divs.className = "gridBlock";
