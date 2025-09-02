@@ -68,3 +68,4 @@ function gridCreator(){
             document.getElementById("grid").appendChild(divs);
         }
 }
+
