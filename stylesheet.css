@@ -89,6 +89,11 @@ button:hover {
   z-index: 1000;
 }
 
+.modal.hidden {
+  display: none;
+}
+
+
 .modal-content {
   background-color: #fff;
   padding: 2rem;
